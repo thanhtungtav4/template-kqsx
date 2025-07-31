@@ -363,169 +363,462 @@
         <!-- Results Section -->
         <section class="py-8 sm:py-12" role="region" aria-label="Kết quả xổ số">
             <div class="container mx-auto px-3 sm:px-4">
-                <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 sm:mb-8 text-center px-2">
-                    Kết Quả Xổ Số Chi Tiết
-                </h3>
+                <div class="text-center mb-6 sm:mb-8">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 px-2">
+                        🎰 Kết Quả Xổ Số Chi Tiết - Hôm Nay
+                    </h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-4">
+                        Cập nhật nhanh nhất từ các đài xổ số chính thức
+                    </p>
+                    
+                    <!-- Quick Date Navigation -->
+                    <div class="flex justify-center space-x-2 mb-6">
+                        <button class="px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                            <i class="fas fa-chevron-left mr-1"></i>Hôm qua
+                        </button>
+                        <span class="px-4 py-2 text-sm bg-primary-600 text-white rounded-lg font-medium">
+                            Thứ 4, 31/07/2025
+                        </span>
+                        <button class="px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                            Ngày mai<i class="fas fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
                 
                 <!-- Results will be loaded here -->
                 <div id="results-container" class="space-y-4 sm:space-y-6 lg:space-y-8">
                     <!-- Miền Bắc Results -->
-                    <div class="card bg-white rounded-xl shadow-regional p-4 sm:p-6 border-l-4 border-red-500">
+                    <div class="card bg-white rounded-xl shadow-regional p-4 sm:p-6 border-l-4 border-red-500 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
                                 <i class="fas fa-pagoda text-red-500 mr-2"></i>
                                 XSMB - Miền Bắc
                             </h4>
-                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
-                                Thứ 4, 30/07/2025
-                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
+                                    Thứ 4, 31/07/2025
+                                </span>
+                                <a href="north.html" class="text-red-600 hover:text-red-700 text-sm font-medium">
+                                    Chi tiết →
+                                </a>
+                            </div>
                         </div>
                         
                         <!-- Giải Đặc Biệt -->
-                        <div class="mb-4 p-4 bg-gradient-to-r from-red-50 to-red-100 rounded-lg">
+                        <div class="mb-4 p-4 bg-gradient-to-r from-red-50 to-red-100 rounded-lg border border-red-200">
                             <div class="text-center">
                                 <div class="text-sm text-red-600 font-medium mb-1">GIẢI ĐẶC BIỆT</div>
                                 <div class="text-3xl sm:text-4xl font-bold text-red-600 tracking-wider">
                                     1 2 3 4 5
                                 </div>
+                                <div class="text-xs text-red-500 mt-1">Đài Hà Nội</div>
                             </div>
                         </div>
 
-                        <!-- Các giải khác -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                            <div class="text-center p-3 bg-orange-50 rounded-lg">
-                                <div class="text-xs text-orange-600 font-medium mb-1">Giải Nhất</div>
-                                <div class="text-lg font-bold text-orange-600">98765</div>
-                            </div>
-                            <div class="text-center p-3 bg-yellow-50 rounded-lg">
-                                <div class="text-xs text-yellow-600 font-medium mb-1">Giải Nhì</div>
-                                <div class="text-sm font-bold text-yellow-600">45678 - 87654</div>
-                            </div>
-                            <div class="text-center p-3 bg-green-50 rounded-lg">
-                                <div class="text-xs text-green-600 font-medium mb-1">Giải Ba</div>
-                                <div class="text-xs font-bold text-green-600">12345 - 67890 - 11111</div>
+                        <!-- Provinces Results -->
+                        <div class="mb-4">
+                            <h5 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+                                Kết quả các tỉnh Miền Bắc
+                            </h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <!-- Hà Nội -->
+                                <div class="bg-red-50 rounded-lg p-3 border border-red-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-red-700">Hà Nội</span>
+                                        <span class="text-xs text-red-500">18:15</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-red-600">12345</div>
+                                    <div class="text-xs text-red-500">G.ĐB</div>
+                                </div>
+                                
+                                <!-- Bắc Ninh -->
+                                <div class="bg-orange-50 rounded-lg p-3 border border-orange-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-orange-700">Bắc Ninh</span>
+                                        <span class="text-xs text-orange-500">18:15</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-orange-600">98765</div>
+                                    <div class="text-xs text-orange-500">G.1</div>
+                                </div>
+                                
+                                <!-- Quảng Ninh -->
+                                <div class="bg-yellow-50 rounded-lg p-3 border border-yellow-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-yellow-700">Quảng Ninh</span>
+                                        <span class="text-xs text-yellow-500">18:15</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-yellow-600">45678</div>
+                                    <div class="text-xs text-yellow-500">G.2</div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Lô tô -->
-                        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-                            <div class="text-xs text-blue-600 font-medium mb-2">Lô tô 2 số cuối</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">12</span>
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">34</span>
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">45</span>
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">65</span>
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">78</span>
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">90</span>
-                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">11</span>
+                        <!-- Complete Results Table -->
+                        <div class="mb-4 overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="bg-red-50">
+                                        <th class="text-left py-2 px-3 text-red-700 font-medium">Giải</th>
+                                        <th class="text-left py-2 px-3 text-red-700 font-medium">Kết quả</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-red-100">
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-red-600">ĐB</td>
+                                        <td class="py-2 px-3 font-bold text-red-600">12345</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-orange-600">G1</td>
+                                        <td class="py-2 px-3 font-bold text-orange-600">98765</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-yellow-600">G2</td>
+                                        <td class="py-2 px-3 font-bold text-yellow-600">45678 - 87654</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-green-600">G3</td>
+                                        <td class="py-2 px-3 font-bold text-green-600">12345 - 67890 - 11111 - 22222 - 33333 - 44444</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Lô tô và Actions -->
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-3 lg:space-y-0">
+                            <div class="flex-1">
+                                <div class="text-xs text-blue-600 font-medium mb-2">Lô tô 2 số cuối</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">12</span>
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">34</span>
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">45</span>
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">65</span>
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">78</span>
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">90</span>
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-sm">11</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200 transition-colors">
+                                    <i class="fas fa-share mr-1"></i>Chia sẻ
+                                </button>
+                                <button class="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200 transition-colors">
+                                    <i class="fas fa-download mr-1"></i>Tải về
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Miền Trung Results -->
-                    <div class="card bg-white rounded-xl shadow-regional p-4 sm:p-6 border-l-4 border-green-500">
+                    <div class="card bg-white rounded-xl shadow-regional p-4 sm:p-6 border-l-4 border-green-500 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
                                 <i class="fas fa-crown text-green-500 mr-2"></i>
                                 XSMT - Miền Trung
                             </h4>
-                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
-                                Thứ 4, 30/07/2025
-                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+                                    Thứ 4, 31/07/2025
+                                </span>
+                                <a href="central.html" class="text-green-600 hover:text-green-700 text-sm font-medium">
+                                    Chi tiết →
+                                </a>
+                            </div>
                         </div>
                         
                         <!-- Giải Đặc Biệt -->
-                        <div class="mb-4 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-lg">
+                        <div class="mb-4 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-lg border border-green-200">
                             <div class="text-center">
                                 <div class="text-sm text-green-600 font-medium mb-1">GIẢI ĐẶC BIỆT</div>
                                 <div class="text-3xl sm:text-4xl font-bold text-green-600 tracking-wider">
                                     5 4 3 2 1
                                 </div>
+                                <div class="text-xs text-green-500 mt-1">Đài Huế</div>
                             </div>
                         </div>
 
-                        <!-- Các giải khác -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                            <div class="text-center p-3 bg-orange-50 rounded-lg">
-                                <div class="text-xs text-orange-600 font-medium mb-1">Giải Nhất</div>
-                                <div class="text-lg font-bold text-orange-600">13579</div>
-                            </div>
-                            <div class="text-center p-3 bg-yellow-50 rounded-lg">
-                                <div class="text-xs text-yellow-600 font-medium mb-1">Giải Nhì</div>
-                                <div class="text-sm font-bold text-yellow-600">24680 - 97531</div>
-                            </div>
-                            <div class="text-center p-3 bg-purple-50 rounded-lg">
-                                <div class="text-xs text-purple-600 font-medium mb-1">Giải Ba</div>
-                                <div class="text-xs font-bold text-purple-600">55555 - 77777 - 88888</div>
+                        <!-- Provinces Results -->
+                        <div class="mb-4">
+                            <h5 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-green-500 mr-2"></i>
+                                Kết quả các tỉnh Miền Trung
+                            </h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <!-- Huế -->
+                                <div class="bg-green-50 rounded-lg p-3 border border-green-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-green-700">Thừa T. Huế</span>
+                                        <span class="text-xs text-green-500">17:15</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-green-600">54321</div>
+                                    <div class="text-xs text-green-500">G.ĐB</div>
+                                </div>
+                                
+                                <!-- Đà Nẵng -->
+                                <div class="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-blue-700">Đà Nẵng</span>
+                                        <span class="text-xs text-blue-500">17:15</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-blue-600">13579</div>
+                                    <div class="text-xs text-blue-500">G.1</div>
+                                </div>
+                                
+                                <!-- Quảng Nam -->
+                                <div class="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-purple-700">Quảng Nam</span>
+                                        <span class="text-xs text-purple-500">17:15</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-purple-600">24680</div>
+                                    <div class="text-xs text-purple-500">G.2</div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Lô tô -->
-                        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-                            <div class="text-xs text-blue-600 font-medium mb-2">Lô tô 2 số cuối</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">21</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">79</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">80</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">31</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">55</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">77</span>
-                                <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">88</span>
+                        <!-- Complete Results Table -->
+                        <div class="mb-4 overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="bg-green-50">
+                                        <th class="text-left py-2 px-3 text-green-700 font-medium">Giải</th>
+                                        <th class="text-left py-2 px-3 text-green-700 font-medium">Kết quả</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-green-100">
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-green-600">ĐB</td>
+                                        <td class="py-2 px-3 font-bold text-green-600">54321</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-blue-600">G1</td>
+                                        <td class="py-2 px-3 font-bold text-blue-600">13579</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-purple-600">G2</td>
+                                        <td class="py-2 px-3 font-bold text-purple-600">24680 - 97531</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-orange-600">G3</td>
+                                        <td class="py-2 px-3 font-bold text-orange-600">55555 - 77777 - 88888 - 99999 - 11111 - 22222</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Lô tô và Actions -->
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-3 lg:space-y-0">
+                            <div class="flex-1">
+                                <div class="text-xs text-blue-600 font-medium mb-2">Lô tô 2 số cuối</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">21</span>
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">79</span>
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">80</span>
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">31</span>
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">55</span>
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">77</span>
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-sm">88</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded hover:bg-green-200 transition-colors">
+                                    <i class="fas fa-share mr-1"></i>Chia sẻ
+                                </button>
+                                <button class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded hover:bg-green-200 transition-colors">
+                                    <i class="fas fa-download mr-1"></i>Tải về
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Miền Nam Results -->
-                    <div class="card bg-white rounded-xl shadow-regional p-4 sm:p-6 border-l-4 border-purple-500">
+                    <div class="card bg-white rounded-xl shadow-regional p-4 sm:p-6 border-l-4 border-purple-500 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
                                 <i class="fas fa-palm-tree text-purple-500 mr-2"></i>
                                 XSMN - Miền Nam
                             </h4>
-                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">
-                                Thứ 4, 30/07/2025
-                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">
+                                    Thứ 4, 31/07/2025
+                                </span>
+                                <a href="south.html" class="text-purple-600 hover:text-purple-700 text-sm font-medium">
+                                    Chi tiết →
+                                </a>
+                            </div>
                         </div>
                         
                         <!-- Giải Đặc Biệt -->
-                        <div class="mb-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg">
+                        <div class="mb-4 p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border border-purple-200">
                             <div class="text-center">
                                 <div class="text-sm text-purple-600 font-medium mb-1">GIẢI ĐẶC BIỆT</div>
                                 <div class="text-3xl sm:text-4xl font-bold text-purple-600 tracking-wider">
                                     9 8 7 6 5
                                 </div>
+                                <div class="text-xs text-purple-500 mt-1">Đài Hồ Chí Minh</div>
                             </div>
                         </div>
 
-                        <!-- Các giải khác -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                            <div class="text-center p-3 bg-orange-50 rounded-lg">
-                                <div class="text-xs text-orange-600 font-medium mb-1">Giải Nhất</div>
-                                <div class="text-lg font-bold text-orange-600">24681</div>
-                            </div>
-                            <div class="text-center p-3 bg-yellow-50 rounded-lg">
-                                <div class="text-xs text-yellow-600 font-medium mb-1">Giải Nhì</div>
-                                <div class="text-sm font-bold text-yellow-600">13579 - 86420</div>
-                            </div>
-                            <div class="text-center p-3 bg-pink-50 rounded-lg">
-                                <div class="text-xs text-pink-600 font-medium mb-1">Giải Ba</div>
-                                <div class="text-xs font-bold text-pink-600">99999 - 66666 - 33333</div>
+                        <!-- Provinces Results -->
+                        <div class="mb-4">
+                            <h5 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-purple-500 mr-2"></i>
+                                Kết quả các tỉnh Miền Nam
+                            </h5>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                                <!-- TP HCM -->
+                                <div class="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-purple-700">TP.HCM</span>
+                                        <span class="text-xs text-purple-500">16:10</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-purple-600">98765</div>
+                                    <div class="text-xs text-purple-500">G.ĐB</div>
+                                </div>
+                                
+                                <!-- Đồng Tháp -->
+                                <div class="bg-pink-50 rounded-lg p-3 border border-pink-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-pink-700">Đồng Tháp</span>
+                                        <span class="text-xs text-pink-500">16:10</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-pink-600">24681</div>
+                                    <div class="text-xs text-pink-500">G.1</div>
+                                </div>
+                                
+                                <!-- Cà Mau -->
+                                <div class="bg-indigo-50 rounded-lg p-3 border border-indigo-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-indigo-700">Cà Mau</span>
+                                        <span class="text-xs text-indigo-500">16:10</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-indigo-600">13579</div>
+                                    <div class="text-xs text-indigo-500">G.2</div>
+                                </div>
+                                
+                                <!-- An Giang -->
+                                <div class="bg-teal-50 rounded-lg p-3 border border-teal-100">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm font-medium text-teal-700">An Giang</span>
+                                        <span class="text-xs text-teal-500">16:10</span>
+                                    </div>
+                                    <div class="text-lg font-bold text-teal-600">86420</div>
+                                    <div class="text-xs text-teal-500">G.2</div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Lô tô -->
-                        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
-                            <div class="text-xs text-blue-600 font-medium mb-2">Lô tô 2 số cuối</div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">65</span>
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">81</span>
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">79</span>
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">20</span>
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">99</span>
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">66</span>
-                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">33</span>
+                        <!-- Complete Results Table -->
+                        <div class="mb-4 overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="bg-purple-50">
+                                        <th class="text-left py-2 px-3 text-purple-700 font-medium">Giải</th>
+                                        <th class="text-left py-2 px-3 text-purple-700 font-medium">Kết quả</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-purple-100">
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-purple-600">ĐB</td>
+                                        <td class="py-2 px-3 font-bold text-purple-600">98765</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-pink-600">G1</td>
+                                        <td class="py-2 px-3 font-bold text-pink-600">24681</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-indigo-600">G2</td>
+                                        <td class="py-2 px-3 font-bold text-indigo-600">13579 - 86420</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-3 font-medium text-teal-600">G3</td>
+                                        <td class="py-2 px-3 font-bold text-teal-600">99999 - 66666 - 33333 - 77777 - 44444 - 11111</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Lô tô và Actions -->
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-3 lg:space-y-0">
+                            <div class="flex-1">
+                                <div class="text-xs text-blue-600 font-medium mb-2">Lô tô 2 số cuối</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">65</span>
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">81</span>
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">79</span>
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">20</span>
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">99</span>
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">66</span>
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">33</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 text-xs bg-purple-100 text-purple-600 rounded hover:bg-purple-200 transition-colors">
+                                    <i class="fas fa-share mr-1"></i>Chia sẻ
+                                </button>
+                                <button class="px-3 py-1 text-xs bg-purple-100 text-purple-600 rounded hover:bg-purple-200 transition-colors">
+                                    <i class="fas fa-download mr-1"></i>Tải về
+                                </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Daily Results Archive -->
+                <div class="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">
+                            📅 Kết Quả Theo Ngày
+                        </h4>
+                        <p class="text-gray-600 text-sm">
+                            Tra cứu kết quả xổ số các ngày trước
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+                        <!-- Last 7 days -->
+                        <a href="results-30-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">T2</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">30</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                        <a href="results-29-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">CN</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">29</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                        <a href="results-28-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">T7</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">28</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                        <a href="results-27-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">T6</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">27</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                        <a href="results-26-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">T5</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">26</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                        <a href="results-25-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">T4</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">25</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                        <a href="results-24-07-2025.html" class="group bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-lg p-3 text-center transition-all duration-300">
+                            <div class="text-sm font-medium text-gray-600 group-hover:text-primary-600">T3</div>
+                            <div class="text-lg font-bold text-gray-800 group-hover:text-primary-700">24</div>
+                            <div class="text-xs text-gray-500 group-hover:text-primary-500">Tháng 7</div>
+                        </a>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="archive.html" class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors">
+                            <i class="fas fa-archive mr-2"></i>
+                            Xem tất cả kết quả
+                        </a>
                     </div>
                 </div>
             </div>
