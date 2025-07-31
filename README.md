@@ -15,7 +15,7 @@ Dự án **KQXS Vietnam** là một hệ thống web hiện đại cho việc hi
 
 ```
 kqsx/
-├── 📄 index-optimized.html      # Trang chủ tổng hợp (optimized)
+├── 📄 index.html      # Trang chủ tổng hợp (optimized)
 ├── 📄 north-unified.html         # Miền Bắc (theme đỏ)
 ├── 📄 central-unified.html       # Miền Trung (theme cam)  
 ├── 📄 south-unified.html         # Miền Nam (theme xanh)
@@ -133,7 +133,7 @@ npx tailwindcss -i ./src/input.css -o ./design-system.css --minify
 
 ```
 kqsx/
-├── index-optimized.html # Trang chủ (optimized)
+├── index.html # Trang chủ (optimized)
 ├── design-system.css    # CSS design system với Tailwind
 ├── modules.js           # JavaScript modules (ES6+)
 ├── app.js              # Application logic
@@ -142,7 +142,7 @@ kqsx/
 ## 🛠️ Cài đặt và chạy
 
 1. **Clone hoặc download project**
-2. **Mở file `index-optimized.html` trong trình duyệt**
+2. **Mở file `index.html` trong trình duyệt**
 3. **Hoặc chạy local server:**
    ```bash
    # Sử dụng Python
