@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Danh Sách Trang Web KQXS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626',
+                        secondary: '#fbbf24',
+                        accent: '#ef4444',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./design-system.css" rel="stylesheet">
+</head>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded-lg z-50">
+        Chuyển đến nội dung chính
+    </a>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="fixed inset-0 bg-white bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="w-12 h-12 border-4 border-primary-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-gray-600 font-medium">Đang tải...</p>
+        </div>
+    </div>
+
+<body class="theme-all bg-gray-50 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="gradient-primary text-white shadow-lg sticky top-0 z-40 transition-all duration-300 backdrop-blur-sm" role="banner">
+        <div class="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <div class="bg-white text-primary-600 p-1.5 sm:p-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                        <i class="fas fa-sitemap text-lg sm:text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SƠ ĐỒ TRANG</h1>
+                        <p class="text-xs opacity-90 hidden sm:block font-medium">Danh mục trang web</p>
+                    </div>
+                </div>
+
+                <!-- Search & Tools (Desktop) -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="relative">
+                        <input 
+                            type="search" 
+                            placeholder="Tìm kiếm số..." 
+                            class="w-48 px-3 py-2 pl-10 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all"
+                        >
+                        <i class="fas fa-search absolute left-3 top-3 text-white/70 text-sm"></i>
+                    </div>
+                    <button class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition-colors duration-200">
+                        <i class="fas fa-bell text-sm mr-1"></i>
+                        <span class="text-xs">Thông báo</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button 
+                    id="mobile-menu-btn" 
+                    class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 touch-manipulation"
+                    aria-label="Menu"
+                    aria-expanded="false"
+                >
+                    <i class="fas fa-bars text-lg sm:text-xl" aria-hidden="true"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" role="navigation" aria-label="Menu chính">
+                    <a href="index-optimized.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-home mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Trang chủ</span>
+                        <span class="lg:hidden">Home</span>
+                    </a>
+                    <a href="north.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-pagoda mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Bắc</span>
+                        <span class="lg:hidden">Bắc</span>
+                    </a>
+                    <a href="central.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-crown mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Trung</span>
+                        <span class="lg:hidden">Trung</span>
+                    </a>
+                    <a href="south.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-palm-tree mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Nam</span>
+                        <span class="lg:hidden">Nam</span>
+                    </a>
+                    <a href="statistics.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-chart-bar mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Thống kê</span>
+                        <span class="xl:hidden">TK</span>
+                    </a>
+                    <a href="soi-cau.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-search mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Soi cầu</span>
+                        <span class="xl:hidden">SC</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="md:hidden mt-3 hidden animate-slide-in" role="navigation" aria-label="Menu di động">
+                <div class="container mx-auto px-3">
+                    <div class="bg-primary-700 rounded-lg p-3 space-y-1 touch-manipulation">
+                        <a href="index.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-home mr-3 w-5" aria-hidden="true"></i>
+                            <span>Trang chủ</span>
+                        </a>
+                        <a href="north.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-pagoda mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Bắc</span>
+                        </a>
+                        <a href="central.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-crown mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Trung</span>
+                        </a>
+                        <a href="south.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-palm-tree mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Nam</span>
+                        </a>
+                        <a href="statistics.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-chart-bar mr-3 w-5" aria-hidden="true"></i>
+                            <span>Thống kê</span>
+                        </a>
+                        <a href="soi-cau.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-search mr-3 w-5" aria-hidden="true"></i>
+                            <span>Soi cầu</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 mb-8">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <i class="fas fa-map mr-3"></i>Sơ Đồ Trang Web
+                </h2>
+                <p class="text-lg opacity-90 mb-6">
+                    Khám phá tất cả các trang và tính năng của website KQXS Việt Nam
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                        <div class="font-bold">Tổng số trang</div>
+                        <div class="text-2xl font-bold">15+</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                        <div class="font-bold">Chức năng chính</div>
+                        <div class="text-2xl font-bold">8</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                        <div class="font-bold">Cập nhật</div>
+                        <div class="text-2xl font-bold">24/7</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Pages -->
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-red-600 mb-6 flex items-center">
+                    <i class="fas fa-star mr-3"></i>Trang Chính
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Trang chủ -->
+                    <a href="index.html" class="group bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-home text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Trang Chủ</h4>
+                                <p class="text-sm opacity-90">index.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-3">
+                            Kết quả xổ số 3 miền, tin tức, dự đoán và thông tin tổng hợp
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Chính</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Miền Bắc -->
+                    <a href="north.html" class="group bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Miền Bắc</h4>
+                                <p class="text-sm opacity-90">north.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-3">
+                            Kết quả xổ số miền Bắc, phân tích chi tiết và thống kê
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Kết quả</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Miền Trung -->
+                    <a href="central.html" class="group bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-sun text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Miền Trung</h4>
+                                <p class="text-sm opacity-90">central.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-3">
+                            Kết quả xổ số miền Trung, Đà Nẵng và Khánh Hòa
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Kết quả</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Miền Nam -->
+                    <a href="south.html" class="group bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-palm-tree text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Miền Nam</h4>
+                                <p class="text-sm opacity-90">south.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-3">
+                            Kết quả xổ số miền Nam, 21 tỉnh thành chi tiết
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Kết quả</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Thống kê -->
+                    <a href="statistics.html" class="group bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-lg p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-bar text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Thống Kê</h4>
+                                <p class="text-sm opacity-90">statistics.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-3">
+                            Biểu đồ, phân tích tần suất và xu hướng các con số
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Phân tích</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+
+                    <!-- Dự đoán -->
+                    <a href="prediction.html" class="group bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg p-6 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-crystal-ball text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Dự Đoán</h4>
+                                <p class="text-sm opacity-90">prediction.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-3">
+                            AI dự đoán, soi cầu và tính toán số may mắn
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">AI</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools & Features -->
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-blue-600 mb-6 flex items-center">
+                    <i class="fas fa-tools mr-3"></i>Công Cụ & Tiện Ích
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Soi cầu -->
+                    <a href="soi-cau.html" class="group bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-search text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-blue-600">Soi Cầu</h4>
+                                <p class="text-xs text-gray-600">soi-cau.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Công cụ soi cầu chuyên nghiệp</p>
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Công cụ</span>
+                    </a>
+
+                    <!-- Lịch sử -->
+                    <a href="history.html" class="group bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-history text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-green-600">Lịch Sử</h4>
+                                <p class="text-xs text-gray-600">history.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Tra cứu kết quả các ngày trước</p>
+                        <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded">Tra cứu</span>
+                    </a>
+
+                    <!-- Tần suất -->
+                    <a href="frequency.html" class="group bg-gray-50 hover:bg-purple-50 border border-gray-200 hover:border-purple-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-pie text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-purple-600">Tần Suất</h4>
+                                <p class="text-xs text-gray-600">frequency.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Phân tích tần suất xuất hiện</p>
+                        <span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded">Phân tích</span>
+                    </a>
+
+                    <!-- Máy tính -->
+                    <a href="calculator.html" class="group bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-calculator text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-orange-600">Máy Tính</h4>
+                                <p class="text-xs text-gray-600">calculator.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Tính toán số may mắn</p>
+                        <span class="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded">Tiện ích</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Pages -->
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-green-600 mb-6 flex items-center">
+                    <i class="fas fa-info-circle mr-3"></i>Thông Tin & Hướng Dẫn
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Về chúng tôi -->
+                    <a href="about.html" class="group bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-users text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-blue-600">Về Chúng Tôi</h4>
+                                <p class="text-xs text-gray-600">about.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Thông tin về đội ngũ và sứ mệnh</p>
+                    </a>
+
+                    <!-- Liên hệ -->
+                    <a href="contact.html" class="group bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-green-600">Liên Hệ</h4>
+                                <p class="text-xs text-gray-600">contact.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Thông tin liên hệ và hỗ trợ</p>
+                    </a>
+
+                    <!-- Hướng dẫn -->
+                    <a href="guide.html" class="group bg-gray-50 hover:bg-purple-50 border border-gray-200 hover:border-purple-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-book text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-purple-600">Hướng Dẫn</h4>
+                                <p class="text-xs text-gray-600">guide.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Hướng dẫn sử dụng website</p>
+                    </a>
+
+                    <!-- FAQ -->
+                    <a href="faq.html" class="group bg-gray-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-question-circle text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-yellow-600">FAQ</h4>
+                                <p class="text-xs text-gray-600">faq.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Câu hỏi thường gặp</p>
+                    </a>
+
+                    <!-- Điều khoản -->
+                    <a href="terms.html" class="group bg-gray-50 hover:bg-red-50 border border-gray-200 hover:border-red-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-file-contract text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-red-600">Điều Khoản</h4>
+                                <p class="text-xs text-gray-600">terms.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Điều khoản sử dụng</p>
+                    </a>
+
+                    <!-- Chính sách -->
+                    <a href="privacy.html" class="group bg-gray-50 hover:bg-indigo-50 border border-gray-200 hover:border-indigo-300 rounded-lg p-4 transition-all">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 group-hover:text-indigo-600">Chính Sách</h4>
+                                <p class="text-xs text-gray-600">privacy.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Chính sách bảo mật</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- API & Mobile -->
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-purple-600 mb-6 flex items-center">
+                    <i class="fas fa-code mr-3"></i>API & Ứng Dụng
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- API Documentation -->
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">API Documentation</h4>
+                                <p class="text-sm opacity-90">api-docs.html</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-4">
+                            Tài liệu API cho developers, tích hợp dữ liệu xổ số vào ứng dụng
+                        </p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">REST API</span>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">JSON</span>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Real-time</span>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App -->
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                                <i class="fas fa-mobile-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Mobile App</h4>
+                                <p class="text-sm opacity-90">Ứng dụng di động</p>
+                            </div>
+                        </div>
+                        <p class="text-sm opacity-90 mb-4">
+                            Tải ứng dụng KQXS cho iOS và Android, nhận thông báo real-time
+                        </p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">iOS</span>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Android</span>
+                            <span class="text-xs bg-white/20 px-2 py-1 rounded">Push</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <section>
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-rocket mr-3"></i>Truy Cập Nhanh
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                    <a href="index.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-lg p-3 text-center transition-all group">
+                        <i class="fas fa-home text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                        <div class="text-xs font-medium">Trang chủ</div>
+                    </a>
+                    <a href="north.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-lg p-3 text-center transition-all group">
+                        <i class="fas fa-map-marker-alt text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                        <div class="text-xs font-medium">Miền Bắc</div>
+                    </a>
+                    <a href="central.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-lg p-3 text-center transition-all group">
+                        <i class="fas fa-sun text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                        <div class="text-xs font-medium">Miền Trung</div>
+                    </a>
+                    <a href="south.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-lg p-3 text-center transition-all group">
+                        <i class="fas fa-palm-tree text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                        <div class="text-xs font-medium">Miền Nam</div>
+                    </a>
+                    <a href="statistics.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-lg p-3 text-center transition-all group">
+                        <i class="fas fa-chart-bar text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                        <div class="text-xs font-medium">Thống kê</div>
+                    </a>
+                    <a href="prediction.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-lg p-3 text-center transition-all group">
+                        <i class="fas fa-crystal-ball text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                        <div class="text-xs font-medium">Dự đoán</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 sm:py-12" role="contentinfo">
+        <div class="container mx-auto px-3 sm:px-4">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+                <!-- Brand & About -->
+                <div class="text-center sm:text-left lg:col-span-1">
+                    <div class="flex items-center justify-center sm:justify-start space-x-3 mb-4">
+                        <div class="bg-primary-600 text-white p-2 rounded-lg">
+                            <i class="fas fa-dice text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">KQXS 3 MIỀN</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Cung cấp kết quả xổ số nhanh chóng, chính xác từ nguồn chính thức. 
+                        Tin cậy hàng đầu Việt Nam với hơn 10 năm kinh nghiệm.
+                    </p>
+                    <div class="flex justify-center sm:justify-start space-x-3">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="bg-blue-400 hover:bg-blue-500 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="bg-red-600 hover:bg-red-700 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-youtube text-sm"></i>
+                        </a>
+                        <a href="#" class="bg-pink-600 hover:bg-pink-700 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center sm:text-left">
+                    <h5 class="font-bold text-lg mb-4 text-primary-400">
+                        <i class="fas fa-link mr-2"></i>Liên kết nhanh
+                    </h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="north.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-pagoda mr-2 text-primary-400"></i>Kết quả Miền Bắc
+                        </a></li>
+                        <li><a href="central.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-crown mr-2 text-primary-400"></i>Kết quả Miền Trung
+                        </a></li>
+                        <li><a href="south.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-palm-tree mr-2 text-primary-400"></i>Kết quả Miền Nam
+                        </a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-chart-bar mr-2 text-primary-400"></i>Thống kê số liệu
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Services -->
+                <div class="text-center sm:text-left">
+                    <h5 class="font-bold text-lg mb-4 text-primary-400">
+                        <i class="fas fa-tools mr-2"></i>Công cụ & Dịch vụ
+                    </h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="soi-cau.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-crystal-ball mr-2 text-primary-400"></i>Soi cầu số đẹp
+                        </a></li>
+                        <li><a href="prediction.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-robot mr-2 text-primary-400"></i>Dự đoán AI
+                        </a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-mobile-alt mr-2 text-primary-400"></i>Ứng dụng Mobile
+                        </a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-bell mr-2 text-primary-400"></i>Đăng ký thông báo
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Support -->
+                <div class="text-center sm:text-left">
+                    <h5 class="font-bold text-lg mb-4 text-primary-400">
+                        <i class="fas fa-headset mr-2"></i>Hỗ trợ khách hàng
+                    </h5>
+                    <div class="text-sm text-gray-300 space-y-3">
+                        <div class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-envelope mr-3 text-primary-400"></i>
+                            <div>
+                                <p class="font-medium">Email hỗ trợ:</p>
+                                <a href="mailto:support@kqxs.com" class="hover:text-white transition-colors">support@kqxs.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-phone mr-3 text-primary-400"></i>
+                            <div>
+                                <p class="font-medium">Hotline 24/7:</p>
+                                <a href="tel:1900xxxx" class="hover:text-white transition-colors">1900-xxxx</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-clock mr-3 text-primary-400"></i>
+                            <div>
+                                <p class="font-medium">Giờ làm việc:</p>
+                                <p>24/7 - Tất cả các ngày</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="border-t border-gray-700 pt-8 mb-8">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h5 class="text-lg font-bold mb-3 text-primary-400">
+                        <i class="fas fa-newspaper mr-2"></i>Đăng ký nhận tin tức mới nhất
+                    </h5>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Nhận thông báo kết quả xổ số và các tin tức quan trọng qua email
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input 
+                            type="email" 
+                            placeholder="Nhập email của bạn..." 
+                            class="flex-1 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        >
+                        <button class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Đăng ký
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-6 sm:pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-center md:text-left">
+                        <p class="text-sm text-gray-400">
+                            &copy; 2025 KQXS 3 Miền. Tất cả quyền được bảo lưu.
+                        </p>
+                        <p class="text-xs text-gray-500 mt-1">
+                            Phiên bản 2.0 - Cập nhật lần cuối: 30/07/2025
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4 text-xs">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Điều khoản sử dụng</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Chính sách bảo mật</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Liên hệ quảng cáo</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button 
+            id="back-to-top" 
+            class="fixed bottom-6 right-6 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-30"
+            aria-label="Về đầu trang"
+        >
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="./modules.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

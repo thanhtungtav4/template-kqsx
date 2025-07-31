@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KQXS Miền Nam - Sài Gòn thành phố không ngủ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./design-system.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'saigon': ['Arial', 'Helvetica', 'sans-serif'],
+                        'modern': ['system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        'saigon': {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#059669',
+                            600: '#047857',
+                            700: '#065f46',
+                            800: '#064e3b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded-lg z-50">
+        Chuyển đến nội dung chính
+    </a>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="fixed inset-0 bg-white bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="w-12 h-12 border-4 border-primary-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-gray-600 font-medium">Đang tải...</p>
+        </div>
+    </div>
+
+<body class="theme-south bg-gray-50 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="gradient-primary text-white shadow-lg sticky top-0 z-40 transition-all duration-300 backdrop-blur-sm" role="banner">
+        <div class="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <div class="bg-white text-primary-600 p-1.5 sm:p-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                        <i class="fas fa-dice text-lg sm:text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">KQXS 3 MIỀN</h1>
+                        <p class="text-xs opacity-90 hidden sm:block font-medium">Kết quả xổ số nhanh nhất</p>
+                    </div>
+                </div>
+
+                <!-- Search & Tools (Desktop) -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="relative">
+                        <input 
+                            type="search" 
+                            placeholder="Tìm kiếm số..." 
+                            class="w-48 px-3 py-2 pl-10 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all"
+                        >
+                        <i class="fas fa-search absolute left-3 top-3 text-white/70 text-sm"></i>
+                    </div>
+                    <button class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition-colors duration-200">
+                        <i class="fas fa-bell text-sm mr-1"></i>
+                        <span class="text-xs">Thông báo</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button 
+                    id="mobile-menu-btn" 
+                    class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 touch-manipulation"
+                    aria-label="Menu"
+                    aria-expanded="false"
+                >
+                    <i class="fas fa-bars text-lg sm:text-xl" aria-hidden="true"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" role="navigation" aria-label="Menu chính">
+                    <a href="index-optimized.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-home mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Trang chủ</span>
+                        <span class="lg:hidden">Home</span>
+                    </a>
+                    <a href="north.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-pagoda mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Bắc</span>
+                        <span class="lg:hidden">Bắc</span>
+                    </a>
+                    <a href="central.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-crown mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Trung</span>
+                        <span class="lg:hidden">Trung</span>
+                    </a>
+                    <a href="south.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-palm-tree mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Nam</span>
+                        <span class="lg:hidden">Nam</span>
+                    </a>
+                    <a href="statistics.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-chart-bar mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Thống kê</span>
+                        <span class="xl:hidden">TK</span>
+                    </a>
+                    <a href="soi-cau.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-search mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Soi cầu</span>
+                        <span class="xl:hidden">SC</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="md:hidden mt-3 hidden animate-slide-in" role="navigation" aria-label="Menu di động">
+                <div class="container mx-auto px-3">
+                    <div class="bg-primary-700 rounded-lg p-3 space-y-1 touch-manipulation">
+                        <a href="index.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-home mr-3 w-5" aria-hidden="true"></i>
+                            <span>Trang chủ</span>
+                        </a>
+                        <a href="north.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-pagoda mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Bắc</span>
+                        </a>
+                        <a href="central.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-crown mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Trung</span>
+                        </a>
+                        <a href="south.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-palm-tree mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Nam</span>
+                        </a>
+                        <a href="statistics.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-chart-bar mr-3 w-5" aria-hidden="true"></i>
+                            <span>Thống kê</span>
+                        </a>
+                        <a href="soi-cau.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-search mr-3 w-5" aria-hidden="true"></i>
+                            <span>Soi cầu</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section - Phong cách Sài Gòn năng động -->
+    <section class="nam-gradient saigon-pattern text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <h1 class="text-5xl font-bold mb-4">
+                    🌴 KQXS MIỀN NAM HÔM NAY 🏙️
+                </h1>
+                <div class="text-2xl mb-4 saigon-text bg-white rounded-lg px-6 py-3 inline-block">
+                    <i class="fas fa-city mr-2"></i>
+                    Sài Gòn - Trái tim kinh tế Việt Nam
+                </div>
+                <p class="text-xl mb-6 font-sans">"Sài Gòn ơi! Thành phố mang tên Bác / Nghìn đèn hoa rực rỡ đêm ngày"</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="tropical-frame p-4 rounded-lg">
+                    <i class="fas fa-calendar-alt text-3xl saigon-text mb-2"></i>
+                    <div class="text-lg font-bold saigon-text">Thứ 7, 25/01/2025</div>
+                    <div class="text-sm saigon-text">Ngày xổ số</div>
+                </div>
+                <div class="tropical-frame p-4 rounded-lg">
+                    <i class="fas fa-clock text-3xl saigon-text mb-2"></i>
+                    <div class="text-lg font-bold saigon-text">16:30</div>
+                    <div class="text-sm saigon-text">Giờ quay số</div>
+                </div>
+                <div class="tropical-frame p-4 rounded-lg">
+                    <i class="fas fa-building text-3xl saigon-text mb-2"></i>
+                    <div class="text-lg font-bold saigon-text">21 Tỉnh</div>
+                    <div class="text-sm saigon-text">Miền Nam</div>
+                </div>
+                <div class="tropical-frame p-4 rounded-lg">
+                    <i class="fas fa-rocket text-3xl saigon-text mb-2"></i>
+                    <div class="text-lg font-bold saigon-text">Năng động</div>
+                    <div class="text-sm saigon-text">Phong cách</div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Kết quả xổ số các đài miền Nam -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 saigon-text">
+                <i class="fas fa-city mr-3"></i>
+                KẾT QUẢ XỔ SỐ 21 TỈNH MIỀN NAM
+                <i class="fas fa-palm-tree ml-3"></i>
+            </h2>
+            
+            <!-- Sài Gòn - Đài chính -->
+            <div class="mekong-card rounded-xl p-8 shadow-xl mb-8 max-w-6xl mx-auto modern-shadow">
+                <div class="text-center mb-6">
+                    <h3 class="text-3xl font-bold saigon-text mb-2">
+                        🏙️ TP. HỒ CHÍ MINH - THỨ 7 🏙️
+                    </h3>
+                    <p class="text-lg saigon-text">"Sài Gòn - Trái tim kinh tế, nhịp cầu thương mại"</p>
+                </div>
+                
+                <div class="grid gap-4">
+                    <!-- Giải Đặc Biệt -->
+                    <div class="bg-gradient-to-r from-green-600 to-emerald-700 text-white p-6 rounded-lg text-center neon-glow">
+                        <div class="text-lg font-bold mb-2">🏆 GIẢI ĐẶC BIỆT 🏆</div>
+                        <div class="text-4xl font-bold tracking-widest">987654</div>
+                        <div class="text-sm mt-2 opacity-90">Giải thưởng cao nhất - 3 tỷ đồng</div>
+                    </div>
+                    
+                    <!-- Các giải khác -->
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="tropical-frame p-4 rounded-lg text-center">
+                            <div class="saigon-text font-bold text-lg mb-2">🥇 Giải Nhất</div>
+                            <div class="text-xl font-bold text-green-600">98765</div>
+                            <div class="text-sm text-gray-600">1 tỷ đồng</div>
+                        </div>
+                        <div class="tropical-frame p-4 rounded-lg text-center">
+                            <div class="saigon-text font-bold text-lg mb-2">🥈 Giải Nhì</div>
+                            <div class="text-xl font-bold text-green-600">43210 - 56789</div>
+                            <div class="text-sm text-gray-600">500 triệu/giải</div>
+                        </div>
+                        <div class="tropical-frame p-4 rounded-lg text-center">
+                            <div class="saigon-text font-bold text-lg mb-2">🥉 Giải Ba</div>
+                            <div class="text-lg font-bold text-green-600">12345<br>67890<br>54321<br>98765<br>13579<br>24680</div>
+                            <div class="text-sm text-gray-600">50 triệu/giải</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Các đài khác miền Nam -->
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- Đồng Tháp -->
+                <div class="mekong-card rounded-xl p-6 shadow-lg dynamic-element">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold saigon-text">🌾 ĐỒNG THÁP</h3>
+                        <p class="text-sm saigon-text">Miệt vườn sông nước</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">ĐB:</span>
+                            <span class="font-bold text-green-600">123456</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">G1:</span>
+                            <span class="font-bold text-green-600">12345</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">G2:</span>
+                            <span class="font-bold text-green-600">67890</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cà Mau -->
+                <div class="mekong-card rounded-xl p-6 shadow-lg dynamic-element">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold saigon-text">🦐 CÀ MAU</h3>
+                        <p class="text-sm saigon-text">Mũi cực Nam Tổ quốc</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">ĐB:</span>
+                            <span class="font-bold text-green-600">654321</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">G1:</span>
+                            <span class="font-bold text-green-600">54321</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">G2:</span>
+                            <span class="font-bold text-green-600">09876</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Đồng Nai -->
+                <div class="mekong-card rounded-xl p-6 shadow-lg dynamic-element">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold saigon-text">🏭 ĐỒNG NAI</h3>
+                        <p class="text-sm saigon-text">Công nghiệp phát triển</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">ĐB:</span>
+                            <span class="font-bold text-green-600">789012</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">G1:</span>
+                            <span class="font-bold text-green-600">78901</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-white rounded">
+                            <span class="text-sm saigon-text">G2:</span>
+                            <span class="font-bold text-green-600">23456</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./modules.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

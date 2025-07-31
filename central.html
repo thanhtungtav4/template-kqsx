@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KQXS Miền Trung - Huế cố đô, Đà Nẵng thành phố đáng sống</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./design-system.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'imperial': ['Times New Roman', 'serif'],
+                        'modern': ['Arial', 'sans-serif']
+                    },
+                    colors: {
+                        'hue': {
+                            50: '#fff7ed',
+                            100: '#fed7aa',
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                            800: '#7c2d12'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded-lg z-50">
+        Chuyển đến nội dung chính
+    </a>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="fixed inset-0 bg-white bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="text-center">
+            <div class="w-12 h-12 border-4 border-primary-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-gray-600 font-medium">Đang tải...</p>
+        </div>
+    </div>
+
+<body class="theme-central bg-gray-50 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="gradient-primary text-white shadow-lg sticky top-0 z-40 transition-all duration-300 backdrop-blur-sm" role="banner">
+        <div class="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <div class="bg-white text-primary-600 p-1.5 sm:p-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                        <i class="fas fa-dice text-lg sm:text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">KQXS 3 MIỀN</h1>
+                        <p class="text-xs opacity-90 hidden sm:block font-medium">Kết quả xổ số nhanh nhất</p>
+                    </div>
+                </div>
+
+                <!-- Search & Tools (Desktop) -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="relative">
+                        <input 
+                            type="search" 
+                            placeholder="Tìm kiếm số..." 
+                            class="w-48 px-3 py-2 pl-10 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:bg-white/20 transition-all"
+                        >
+                        <i class="fas fa-search absolute left-3 top-3 text-white/70 text-sm"></i>
+                    </div>
+                    <button class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition-colors duration-200">
+                        <i class="fas fa-bell text-sm mr-1"></i>
+                        <span class="text-xs">Thông báo</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button 
+                    id="mobile-menu-btn" 
+                    class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 touch-manipulation"
+                    aria-label="Menu"
+                    aria-expanded="false"
+                >
+                    <i class="fas fa-bars text-lg sm:text-xl" aria-hidden="true"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" role="navigation" aria-label="Menu chính">
+                    <a href="index-optimized.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-home mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Trang chủ</span>
+                        <span class="lg:hidden">Home</span>
+                    </a>
+                    <a href="north.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-pagoda mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Bắc</span>
+                        <span class="lg:hidden">Bắc</span>
+                    </a>
+                    <a href="central.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-crown mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Trung</span>
+                        <span class="lg:hidden">Trung</span>
+                    </a>
+                    <a href="south.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-palm-tree mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden lg:inline">Miền Nam</span>
+                        <span class="lg:hidden">Nam</span>
+                    </a>
+                    <a href="statistics.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-chart-bar mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Thống kê</span>
+                        <span class="xl:hidden">TK</span>
+                    </a>
+                    <a href="soi-cau.html" class="flex items-center px-2 lg:px-3 py-2 rounded-lg hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-sm lg:text-base">
+                        <i class="fas fa-search mr-1 lg:mr-2" aria-hidden="true"></i>
+                        <span class="hidden xl:inline">Soi cầu</span>
+                        <span class="xl:hidden">SC</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="md:hidden mt-3 hidden animate-slide-in" role="navigation" aria-label="Menu di động">
+                <div class="container mx-auto px-3">
+                    <div class="bg-primary-700 rounded-lg p-3 space-y-1 touch-manipulation">
+                        <a href="index.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-home mr-3 w-5" aria-hidden="true"></i>
+                            <span>Trang chủ</span>
+                        </a>
+                        <a href="north.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-pagoda mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Bắc</span>
+                        </a>
+                        <a href="central.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-crown mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Trung</span>
+                        </a>
+                        <a href="south.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-palm-tree mr-3 w-5" aria-hidden="true"></i>
+                            <span>Miền Nam</span>
+                        </a>
+                        <a href="statistics.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-chart-bar mr-3 w-5" aria-hidden="true"></i>
+                            <span>Thống kê</span>
+                        </a>
+                        <a href="soi-cau.html" class="flex items-center px-3 py-3 rounded-lg hover:bg-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-base">
+                            <i class="fas fa-search mr-3 w-5" aria-hidden="true"></i>
+                            <span>Soi cầu</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Date Navigation -->
+        <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <h2 class="text-2xl font-bold text-red-600">
+                    <i class="fas fa-calendar-alt mr-2"></i>Kết Quả Ngày 30/07/2025
+                </h2>
+                <div class="flex items-center space-x-2">
+                    <button class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg">
+                        <i class="fas fa-chevron-left mr-2"></i>Hôm qua
+                    </button>
+                    <input type="date" class="border border-gray-300 rounded-lg px-3 py-2" value="2025-07-30">
+                    <button class="bg-gray-300 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed">
+                        Ngày mai<i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Central Region Results -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Đài Đà Nẵng -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-gradient-to-r from-yellow-600 to-orange-600 text-white p-4">
+                    <h3 class="text-xl font-bold text-center">
+                        <i class="fas fa-star mr-2"></i>ĐÀI ĐÀ NẴNG
+                    </h3>
+                    <p class="text-center text-sm opacity-90">Thứ Tư - 30/07/2025</p>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải đặc biệt:</span>
+                            <span class="prize-special bg-red-50 px-4 py-2 rounded-lg">123456</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải nhất:</span>
+                            <span class="prize-first bg-green-50 px-4 py-2 rounded-lg">98765</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải nhì:</span>
+                            <div class="flex space-x-2">
+                                <span class="prize-second bg-blue-50 px-3 py-1 rounded">11223</span>
+                                <span class="prize-second bg-blue-50 px-3 py-1 rounded">33445</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải ba:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">55667</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">77889</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">99001</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">22334</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">44556</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">66778</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải tư:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">1234</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">5678</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">9012</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải năm:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">345</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">678</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">901</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">234</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">567</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">890</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải sáu:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">123</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">456</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">789</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải bảy:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">12</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">34</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">56</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">78</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-gray-700">Giải tám:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">01</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Đài Khánh Hòa -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4">
+                    <h3 class="text-xl font-bold text-center">
+                        <i class="fas fa-star mr-2"></i>ĐÀI KHÁNH HÒA
+                    </h3>
+                    <p class="text-center text-sm opacity-90">Thứ Tư - 30/07/2025</p>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải đặc biệt:</span>
+                            <span class="prize-special bg-red-50 px-4 py-2 rounded-lg">654321</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải nhất:</span>
+                            <span class="prize-first bg-green-50 px-4 py-2 rounded-lg">13579</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải nhì:</span>
+                            <div class="flex space-x-2">
+                                <span class="prize-second bg-blue-50 px-3 py-1 rounded">24680</span>
+                                <span class="prize-second bg-blue-50 px-3 py-1 rounded">86420</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải ba:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">11111</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">22222</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">33333</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">44444</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">55555</span>
+                                <span class="prize-third bg-purple-50 px-2 py-1 rounded text-sm">66666</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải tư:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">7777</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">8888</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">9999</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải năm:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">111</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">222</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">333</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">444</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">555</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">666</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải sáu:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">777</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">888</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">999</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <span class="font-medium text-gray-700">Giải bảy:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">11</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">22</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">33</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">44</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-gray-700">Giải tám:</span>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">55</span>
+                                <span class="prize-normal bg-gray-50 px-2 py-1 rounded text-sm">66</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lottery Analysis -->
+        <section class="mt-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold text-red-600 mb-4">
+                    <i class="fas fa-chart-line mr-2"></i>Phân Tích Lô Tô Miền Trung
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Lô tô 2 số cuối -->
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3">Lô tô 2 số cuối hôm nay</h4>
+                        <div class="grid grid-cols-5 gap-2">
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">23</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">45</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">67</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">89</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">01</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">12</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">34</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">56</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">78</span>
+                            <span class="bg-red-100 text-red-600 p-2 rounded text-center font-bold">90</span>
+                        </div>
+                    </div>
+
+                    <!-- Đầu đuôi -->
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3">Thống kê đầu đuôi</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Đầu 1:</span>
+                                <span class="font-bold text-blue-600">12, 13</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Đầu 2:</span>
+                                <span class="font-bold text-blue-600">23, 24</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Đuôi 5:</span>
+                                <span class="font-bold text-blue-600">45, 65</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Đuôi 6:</span>
+                                <span class="font-bold text-blue-600">56, 66</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tổng lớn nhỏ -->
+                    <div>
+                        <h4 class="font-bold text-gray-700 mb-3">Phân loại tổng</h4>
+                        <div class="space-y-3">
+                            <div class="bg-green-50 p-3 rounded-lg">
+                                <div class="font-bold text-green-600">Tổng lớn (5-9)</div>
+                                <div class="text-sm">23, 45, 67, 89</div>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg">
+                                <div class="font-bold text-blue-600">Tổng nhỏ (0-4)</div>
+                                <div class="text-sm">01, 12, 34</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Results -->
+        <section class="mt-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold text-red-600 mb-4">
+                    <i class="fas fa-history mr-2"></i>Kết Quả Các Ngày Trước
+                </h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full table-auto text-sm">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-4 py-2 text-left">Ngày</th>
+                                <th class="px-4 py-2 text-left">Đài</th>
+                                <th class="px-4 py-2 text-left">Đặc biệt</th>
+                                <th class="px-4 py-2 text-left">Giải nhất</th>
+                                <th class="px-4 py-2 text-left">Lô tô</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="px-4 py-2">29/07</td>
+                                <td class="px-4 py-2">Đà Nẵng</td>
+                                <td class="px-4 py-2"><span class="prize-special text-lg">54321</span></td>
+                                <td class="px-4 py-2"><span class="prize-first">13579</span></td>
+                                <td class="px-4 py-2">21, 79, 35, 91</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="px-4 py-2">29/07</td>
+                                <td class="px-4 py-2">Khánh Hòa</td>
+                                <td class="px-4 py-2"><span class="prize-special text-lg">97531</span></td>
+                                <td class="px-4 py-2"><span class="prize-first">24680</span></td>
+                                <td class="px-4 py-2">31, 80, 68, 42</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="px-4 py-2">28/07</td>
+                                <td class="px-4 py-2">Đà Nẵng</td>
+                                <td class="px-4 py-2"><span class="prize-special text-lg">86420</span></td>
+                                <td class="px-4 py-2"><span class="prize-first">97531</span></td>
+                                <td class="px-4 py-2">20, 31, 75, 64</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-8 sm:py-12" role="contentinfo">
+        <div class="container mx-auto px-3 sm:px-4">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+                <!-- Brand & About -->
+                <div class="text-center sm:text-left lg:col-span-1">
+                    <div class="flex items-center justify-center sm:justify-start space-x-3 mb-4">
+                        <div class="bg-primary-600 text-white p-2 rounded-lg">
+                            <i class="fas fa-dice text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">KQXS 3 MIỀN</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Cung cấp kết quả xổ số nhanh chóng, chính xác từ nguồn chính thức. 
+                        Tin cậy hàng đầu Việt Nam với hơn 10 năm kinh nghiệm.
+                    </p>
+                    <div class="flex justify-center sm:justify-start space-x-3">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="bg-blue-400 hover:bg-blue-500 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="bg-red-600 hover:bg-red-700 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-youtube text-sm"></i>
+                        </a>
+                        <a href="#" class="bg-pink-600 hover:bg-pink-700 p-2 rounded-lg transition-colors">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center sm:text-left">
+                    <h5 class="font-bold text-lg mb-4 text-primary-400">
+                        <i class="fas fa-link mr-2"></i>Liên kết nhanh
+                    </h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="north.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-pagoda mr-2 text-primary-400"></i>Kết quả Miền Bắc
+                        </a></li>
+                        <li><a href="central.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-crown mr-2 text-primary-400"></i>Kết quả Miền Trung
+                        </a></li>
+                        <li><a href="south.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-palm-tree mr-2 text-primary-400"></i>Kết quả Miền Nam
+                        </a></li>
+                        <li><a href="statistics.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-chart-bar mr-2 text-primary-400"></i>Thống kê số liệu
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Services -->
+                <div class="text-center sm:text-left">
+                    <h5 class="font-bold text-lg mb-4 text-primary-400">
+                        <i class="fas fa-tools mr-2"></i>Công cụ & Dịch vụ
+                    </h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="soi-cau.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-crystal-ball mr-2 text-primary-400"></i>Soi cầu số đẹp
+                        </a></li>
+                        <li><a href="prediction.html" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-robot mr-2 text-primary-400"></i>Dự đoán AI
+                        </a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-mobile-alt mr-2 text-primary-400"></i>Ứng dụng Mobile
+                        </a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors touch-manipulation flex items-center py-1">
+                            <i class="fas fa-bell mr-2 text-primary-400"></i>Đăng ký thông báo
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Support -->
+                <div class="text-center sm:text-left">
+                    <h5 class="font-bold text-lg mb-4 text-primary-400">
+                        <i class="fas fa-headset mr-2"></i>Hỗ trợ khách hàng
+                    </h5>
+                    <div class="text-sm text-gray-300 space-y-3">
+                        <div class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-envelope mr-3 text-primary-400"></i>
+                            <div>
+                                <p class="font-medium">Email hỗ trợ:</p>
+                                <a href="mailto:support@kqxs.com" class="hover:text-white transition-colors">support@kqxs.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-phone mr-3 text-primary-400"></i>
+                            <div>
+                                <p class="font-medium">Hotline 24/7:</p>
+                                <a href="tel:1900xxxx" class="hover:text-white transition-colors">1900-xxxx</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-clock mr-3 text-primary-400"></i>
+                            <div>
+                                <p class="font-medium">Giờ làm việc:</p>
+                                <p>24/7 - Tất cả các ngày</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="border-t border-gray-700 pt-8 mb-8">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h5 class="text-lg font-bold mb-3 text-primary-400">
+                        <i class="fas fa-newspaper mr-2"></i>Đăng ký nhận tin tức mới nhất
+                    </h5>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Nhận thông báo kết quả xổ số và các tin tức quan trọng qua email
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input 
+                            type="email" 
+                            placeholder="Nhập email của bạn..." 
+                            class="flex-1 px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        >
+                        <button class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Đăng ký
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-6 sm:pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-center md:text-left">
+                        <p class="text-sm text-gray-400">
+                            &copy; 2025 KQXS 3 Miền. Tất cả quyền được bảo lưu.
+                        </p>
+                        <p class="text-xs text-gray-500 mt-1">
+                            Phiên bản 2.0 - Cập nhật lần cuối: 30/07/2025
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4 text-xs">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Điều khoản sử dụng</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Chính sách bảo mật</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Liên hệ quảng cáo</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button 
+            id="back-to-top" 
+            class="fixed bottom-6 right-6 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-30"
+            aria-label="Về đầu trang"
+        >
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="./modules.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
